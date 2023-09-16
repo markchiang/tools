@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>Name Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	  <style>
+  <style>
   /* 手機 */
 @media (max-width: 576px) {
   #hint,
@@ -37,11 +38,10 @@
   }
 }
   </style>
-
 </head>
 
 <body>
-  <div>請輸入名字後按Enter或Search</div>
+  <div id="hint">請輸入名字後按Enter或Search</div>
   <input id="nameInput" type="text" autofocus> <!-- 新增 autofocus -->
   <button id="searchBtn">Search</button>
   
