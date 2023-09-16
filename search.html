@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div>請輸入名字後按Enter或Search</div>
+  <input id="nameInput" type="text" autofocus> <!-- 新增 autofocus -->
+  <button id="searchBtn">Search</button>
+  
+  <div id="T"></div>
+  <div id="result"></div>
+
+  <script>
+  $(document).ready(function() {
+
+    var data = [
+      {name: "John", id: "001", table: "T1"},
+      {name: "Mary", id: "002", table: "T2"},  
+      {name: "Peter", id: "003", table: "T3"}
+    ];
+
+
+	function search() {
+	  var name = $("#nameInput").val();
+		var T = "請至桌號: H";
+        var result = "將由專人替您服務";
+        for(var i = 0; i < data.length; i++) {
+          if(data[i].name === name) {
+            result = "您的編號為: "+data[i].id;
+			T = "請至桌號: "+data[i].table;
+            break;
+          }
+        }
+        $("#result").text(result);
+		$("#T").text(T);
+        $("#nameInput").val(""); // 清空輸入框
+        $("#nameInput").focus(); // 將游標移回輸入框
+    };
+
+	$("#searchBtn").click(function() {
+	  search();  
+	});
+	$("#nameInput").keyup(function(event) {
+	  if (event.keyCode === 13) {
+		search();
+	  }
+	});
+  });
+  </script>
+
+</body>
+</html>
