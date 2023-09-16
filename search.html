@@ -208,11 +208,11 @@
 
 	function search() {
 	  var name = $("#nameInput").val();
-		var T = "請至桌號: H";
+		var T = "請至接待處: Help desk";
         var result = "將由專人替您服務";
         for(var i = 0; i < data.length; i++) {
           if(data[i].name === name) {
-			T = "請至桌號: "+data[i].table;
+			T = "請至簽到表: "+data[i].table;
             result = "您的編號為: "+data[i].id;
             break;
           }
